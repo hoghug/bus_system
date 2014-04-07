@@ -1,4 +1,6 @@
 class StopsController < ApplicationController
+
+
   def new
     @stop = Stop.new
     @lines = Line.all
@@ -13,6 +15,12 @@ class StopsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @stop = Stop.find(params[:id])
+    @stop.destroy
+    redirect_to line_path(@stop.line)
   end
 
   private

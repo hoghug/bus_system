@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @lines = Line.all
+    @stations = Station.all
     render 'layouts/root_index.html.erb'
   end
 end

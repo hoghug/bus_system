@@ -1,8 +1,15 @@
 <h1><%= @line.name %></h1>
 <h3>Stops</h3>
 <ol class="stop-list">
-  <% @line.stations.each do |station| %>
-    <li><%= link_to station.name, station_path(station) %></li>
+  <% @line.stops.each do |stop| %>
+    <li><%= link_to stop.station.name, station_path(stop.station) %>
+      <a href="/stops/<%= stop.id %>"
+        data-confirm = "Are you sure?"
+        data-method="delete"
+        rel="nofollow">
+        <span class = "glyphicon glyphicon-remove"></span>
+      </a>
+    </li>
   <% end %>
 </ol>
 <hr>

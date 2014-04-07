@@ -1,14 +1,24 @@
 <h1>Epicodus Transit System</h1>
 <div id="bus-map">
   <ul id="lines">
-    <% @lines.each do |line| %>
-      <li style="color: <%= line.name.downcase%>;"><%= line.name %>
-        <ul class="station-list">
-          <% line.stations.each do |station| %>
-            <li><div class="circle" style="background-color:<%= line.name.downcase%>;"></div><%= station.name %></li>
-          <% end %>
-        </ul>
-      </li>
+    <% if false %>
+      <% @lines.each do |line| %>
+        <li style="color: <%= line.name.downcase%>;"><%= line.name %>
+          <ul class="station-list">
+            <% line.stations.each do |station| %>
+              <li><div class="circle" style="background-color:<%= line.name.downcase%>;"></div><%= station.name %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
     <% end %>
+
+    <% @stations.each do |station| %>
+      <li><%= station.name %>
+        <% station.lines.each do |line| %>
+          <a href="/lines/<%= line.id %>" class="circle" style="background-color:<%= line.name.downcase%>;"></a>
+        <% end %>
+      </li>
+      <% end %>
   </ul>
 </div>
