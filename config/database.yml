@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  database: bus_system_development
+
+test:
+  adapter: postgresql
+  database: bus_system_test
+
