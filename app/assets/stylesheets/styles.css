@@ -93,3 +93,31 @@ h3 {
   display:none;
 }
 
+#bus-map #lines {
+  font-size:18px;
+
+}
+
+#bus-map #lines li {
+  margin: 5px 0;
+  clear:both;
+}
+
+#bus-map #lines .station-list {
+  margin: 0 0 0 20px;
+  font-size:14px;
+  line-height: 12px;
+}
+
+#bus-map #lines .station-list li {
+  list-style-type: none;
+  padding: 8px 0;
+}
+
+#bus-map #lines .station-list li .circle {
+  border-radius: 50%;
+  width:16px;
+  height: 16px;
+  display: inline-block;
+  margin:0 6px 0 0;
+}

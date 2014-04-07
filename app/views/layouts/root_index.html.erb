@@ -1,7 +1,14 @@
 <h1>Epicodus Transit System</h1>
-
-<%= link_to 'Show Stations', stations_path %> |
-<%= link_to 'Show Lines', lines_path %> |
-<%= link_to 'Add Stop', new_stop_path %>
-
-
+<div id="bus-map">
+  <ul id="lines">
+    <% @lines.each do |line| %>
+      <li style="color: <%= line.name.downcase%>;"><%= line.name %>
+        <ul class="station-list">
+          <% line.stations.each do |station| %>
+            <li><div class="circle" style="background-color:<%= line.name.downcase%>;"></div><%= station.name %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>

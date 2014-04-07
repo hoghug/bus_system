@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
+    @lines = Line.all
     render 'layouts/root_index.html.erb'
   end
 end
