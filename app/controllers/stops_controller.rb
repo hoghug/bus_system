@@ -8,6 +8,8 @@ class StopsController < ApplicationController
   end
 
   def create
+    @lines = Line.all
+    @stations = Station.all
     @stop = Stop.new(stop_params)
     if @stop.save
       flash[:notice] = "Stop created."

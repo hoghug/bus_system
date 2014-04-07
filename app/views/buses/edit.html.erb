@@ -1,0 +1,6 @@
+<h1><%= @bus.name %><h1>
+
+<% @bus.lines.each do |line| %>
+  <%= line.name %>
+<% end %>
+

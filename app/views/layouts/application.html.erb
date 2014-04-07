@@ -14,6 +14,7 @@
       <%= link_to 'Bus Map', :root %> |
       <%= link_to 'Stations', stations_path %> |
       <%= link_to 'Lines', lines_path %> |
+      <%= link_to 'Schedule', arrivals_path %> |
       <%= link_to 'Add Stop', new_stop_path %>
     </nav>
 
@@ -25,6 +26,10 @@
   $(document).ready(function() {
     $('#show-edit').on('click', function() {
       $('#edit-form').toggle();
+    })
+
+    $('#show-new-bus').on('click', function() {
+      $('#new-bus').toggle();
     })
   })
 

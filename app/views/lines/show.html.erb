@@ -1,23 +1,38 @@
+
 <h1><%= @line.name %></h1>
-<h3>Stops</h3>
-<ol class="stop-list">
-  <% @line.stops.each do |stop| %>
-    <li><%= link_to stop.station.name, station_path(stop.station) %>
-      <a href="/stops/<%= stop.id %>"
-        data-confirm = "Are you sure?"
-        data-method="delete"
-        rel="nofollow">
-        <span class = "glyphicon glyphicon-remove"></span>
-      </a>
-    </li>
-  <% end %>
-</ol>
+<div class="col-md-2">
+  <h3>Stops</h3>
+  <ol class="stop-list">
+    <% @line.stops.each do |stop| %>
+      <li><%= link_to stop.station.name, station_path(stop.station) %>
+        <a href="/stops/<%= stop.id %>"
+          data-confirm = "Are you sure?"
+          data-method="delete"
+          rel="nofollow">
+          <span class = "glyphicon glyphicon-remove"></span>
+        </a>
+      </li>
+    <% end %>
+  </ol>
+</div>
+<div class="col-md-2">
+  <h3>Buses</h3>
+  <ul>
+    <% @buses.each do |bus| %>
+      <li><%= link_to bus.name, edit_line_bus_path(bus) %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="clear"></div>
 <hr>
-<a href="javascript:void(0);" id="show-edit">Change Line Name</a> |
-<%= link_to 'Show All Lines', lines_path %> |
-<%= link_to 'Delete', line_path(@line),
-                         :confirm => "You sure?",
-                         :method => "delete" %>
+<a href="javascript:void(0);" id="show-edit">Change Line Name <span class="glyphicon glyphicon-pencil"></span></a> |
+<a href="javascript:void(0);" id="show-new-bus">Add a Bus <span class="glyphicon glyphicon-plus"></span></a> |
+<a href="<%= line_path(@line) %>" data-method="delete" data-confirm="You sure?">Delete <span class="glyphicon glyphicon-remove"></span></a> |
+<%= link_to 'Show All Lines', lines_path , :class => 'bold' %>
+
+<div id="new-bus">
+  <%= render ('buses/form') %>
+</div>
 
 <div id="edit-form">
   <%= render 'form' %>

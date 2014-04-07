@@ -1,0 +1,17 @@
+<h1>All Buses</h1>
+
+<ul>
+<% @buses.each do |bus| %>
+  <li><%= link_to bus.name, bus_path(bus) %></li>
+<% end %>
+</ul>
+
+<hr>
+
+<h3>Add New Bus</h3>
+
+<%= render 'form' %>
+
+<hr>
+
+<%= link_to 'Return to Main Menu', :root %>

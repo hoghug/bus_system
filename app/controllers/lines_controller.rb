@@ -2,10 +2,13 @@ class LinesController < ApplicationController
   def index
     @line = Line.new
     @lines = Line.all
+
   end
 
   def show
     @line = Line.find(params[:id])
+    @buses = @line.buses
+    @bus = Bus.new
   end
 
   def create

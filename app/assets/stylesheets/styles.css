@@ -23,6 +23,7 @@ body {
 }
 
 .clear {clear:both;}
+.bold {color: #F24C27;}
 
 #wrapper {
   width:800px;
@@ -88,7 +89,7 @@ h3 {
   float:left;
 }
 
-#edit-form {
+#edit-form, #new-bus {
   margin: 20px 0 0 0;
   display:none;
 }
@@ -124,4 +125,9 @@ h3 {
 
 .glyphicon {
   font-size: 10px;
+}
+
+.field_with_errors {
+  display: inline-block;
+
 }
