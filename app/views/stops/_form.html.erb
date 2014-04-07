@@ -1,0 +1,27 @@
+<%= render("layouts/errors", :object => @stop) %>
+
+<%= form_for(@stop)  do |f| %>
+
+  <div class="row">
+    <div class="col-md-2">
+
+      <% @lines.each do |line| %>
+        <div class="form-group">
+          <label><%= f.radio_button(:line_id, line.id) %><%= line.name %></label>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="col-md-2">
+      <% @stations.each do |station| %>
+        <div class="form-group">
+          <label><%= f.radio_button(:station_id, station.id) %><%= station.name %></label>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= f.submit(:class => 'btn btn-primary btn-align') %>
+  <%= link_to 'Cancel', :root, :class => 'btn btn-danger btn-align'%>
+
+<% end %>

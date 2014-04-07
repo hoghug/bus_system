@@ -1,0 +1,9 @@
+<%= render("layouts/errors", :object => @station) %>
+
+<%= form_for(@station) do |f|  %>
+  <div class="form_group btn-align">
+    <%= f.label(:name, 'Name:') %>
+    <%= f.text_field(:name, class: 'form-control btn-align') %>
+  </div>
+  <%= f.submit(:class => 'btn btn-primary') %>
+<% end %>

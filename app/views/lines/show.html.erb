@@ -1,0 +1,17 @@
+<h1><%= @line.name %></h1>
+<h3>Stops</h3>
+<ol class="stop-list">
+  <% @line.stations.each do |station| %>
+    <li><%= link_to station.name, station_path(station) %></li>
+  <% end %>
+</ol>
+<hr>
+<a href="javascript:void(0);" id="show-edit">Change Line Name</a> |
+<%= link_to 'Show All Lines', lines_path %> |
+<%= link_to 'Delete', line_path(@line),
+                         :confirm => "You sure?",
+                         :method => "delete" %>
+
+<div id="edit-form">
+  <%= render 'form' %>
+</div>

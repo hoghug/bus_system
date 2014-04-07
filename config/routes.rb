@@ -1,4 +1,8 @@
 BusSystem::Application.routes.draw do
- resources :stations
+  root :to => 'application#index'
+  resources :stations, :except => [:new, :edit]
+
+  resources :lines, :except => [:new, :edit]
+  resources :stops, :except => [:index, :show]
 
 end

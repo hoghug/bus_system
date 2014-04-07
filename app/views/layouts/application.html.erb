@@ -5,13 +5,29 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
   <div id="wrapper">
+    <nav>
+      <%= link_to 'Stations', stations_path %> |
+      <%= link_to 'Lines', lines_path %> |
+      <%= link_to 'Add Stop', new_stop_path %>
+    </nav>
+
+    <h2><%= flash[:notice] %></h2>
     <%= yield %>
   </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#show-edit').on('click', function() {
+      $('#edit-form').toggle();
+    })
+  })
+
+</script>
 
 </body>
 </html>

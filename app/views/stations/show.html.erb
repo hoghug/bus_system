@@ -1,2 +1,17 @@
 <h1><%= @station.name %></h1>
 
+<ul class="line-list">
+  <% @station.lines.each do |line| %>
+    <li><%= link_to line.name, line_path(line) %></li>
+  <% end %>
+</ul>
+<hr>
+<a href="javascript:void(0);" id="show-edit">Change Station Name</a> |
+<%= link_to 'Show All Stations', stations_path %> |
+<%= link_to 'Delete', station_path(@station),
+                         :confirm => "You sure?",
+                         :method => "delete" %>
+<hr>
+<div id="edit-form">
+  <%= render 'form' %>
+</div>
