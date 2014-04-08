@@ -31,6 +31,19 @@
     $('#show-new-bus').on('click', function() {
       $('#new-bus').toggle();
     })
+
+    $('#arrivals').submit(function() {
+      // event.preventDefault();
+      arrivalTimes = {}
+      $('.arrival-time').each(function() {
+        stopId = $(this).data('stop');
+        stopTime = $(this).val();
+        arrivalTimes[stopId] = stopTime
+      })
+      $(this).append('<input type="hidden" value="arrivalTimes" name="arrival_times"');
+      // alert(arrivalTimes[26])
+    })
+
   })
 
 </script>

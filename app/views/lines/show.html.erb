@@ -19,7 +19,7 @@
   <h3>Buses</h3>
   <ul>
     <% @buses.each do |bus| %>
-      <li><%= link_to bus.name, edit_line_bus_path(bus) %></li>
+      <li><%= link_to bus.name, edit_line_bus_path(@line, bus) %></li>
     <% end %>
   </ul>
 </div>
